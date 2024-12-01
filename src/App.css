@@ -1,0 +1,68 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  background: #02001f !important;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+.owl-nav {
+  position: absolute;
+  top: 40%;
+  width: 100%;
+
+  .owl-next {
+    position: absolute;
+    right: 0;
+    background: #0000007e !important;
+    border-radius: 50% !important;
+    height: 3rem;
+    width: 3rem;
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    -webkit-border-radius: 50% !important;
+    -moz-border-radius: 50% !important;
+    -ms-border-radius: 50% !important;
+    -o-border-radius: 50% !important;
+    font-size: 18px !important;
+    padding: 0 !important;
+  }
+  .owl-prev {
+    position: absolute;
+    left: 0;
+    background: #0000007e !important;
+    padding: 0 !important;
+    border-radius: 50% !important;
+    font-size: 18px !important;
+    height: 3rem;
+    width: 3rem;
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.owl-dots {
+  position: absolute;
+  width: 100%;
+  top: 92.6%;
+  display: flex !important;
+  justify-content: center;
+
+  .owl-dot {
+    span {
+      width: 2rem !important;
+      height: 5px !important;
+    }
+  }
+  .owl-dot.active {
+    span {
+      background-color: yellow !important;
+    }
+  }
+}
