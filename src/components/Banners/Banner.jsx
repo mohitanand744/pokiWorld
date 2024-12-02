@@ -27,7 +27,7 @@ const Banner = () => {
       <OwlCarousel className="owl-theme" {...options}>
         <div className="w-full item">
           <img
-            className="object-cover   w-[100%]  h-[22rem] "
+            className="object-cover   w-[100%]  h-[25rem]  "
             src="/images/banner1.png"
             alt="Banner 1"
             loading="eager"
@@ -35,8 +35,16 @@ const Banner = () => {
         </div>
         <div className="w-full item">
           <img
-            className="object-cover   w-[100%]  h-[22rem] "
+            className="object-cover   w-[100%]  h-[25rem]  "
             src="/images/banner2.png"
+            alt="Banner 2"
+            loading="eager"
+          />
+        </div>{" "}
+        <div className="w-full item">
+          <img
+            className="object-cover   w-[100%]  h-[25rem]  "
+            src="/images/banner3.png"
             alt="Banner 2"
             loading="eager"
           />
