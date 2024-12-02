@@ -28,7 +28,7 @@ const Banner = () => {
         <div className="w-full item">
           <img
             className="object-cover   w-[100%]  h-[22rem] "
-            src="/images/banner.svg"
+            src="/images/banner1.png"
             alt="Banner 1"
             loading="eager"
           />
@@ -36,7 +36,7 @@ const Banner = () => {
         <div className="w-full item">
           <img
             className="object-cover   w-[100%]  h-[22rem] "
-            src="/images/banner2.svg"
+            src="/images/banner2.png"
             alt="Banner 2"
             loading="eager"
           />

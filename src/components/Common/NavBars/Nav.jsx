@@ -1,10 +1,12 @@
 import React from "react";
 import { FaBookmark, FaSearch } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import useContextData from "../../Hooks/useContextData";
 
 const Nav = () => {
+  const { savedPokemons } = useContextData();
   return (
-    <div className="w-full px-4 py-5 shadow-inner navbar bg-slate-900 shadow-yellow-400">
+    <div className="w-full px-4 py-2 shadow-inner navbar bg-slate-900 shadow-yellow-400">
       <div className="justify-between w-full sm:justify-start navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -48,7 +50,7 @@ const Nav = () => {
             </li>
           </ul>
         </div>
-        <div className=" h-[3.5rem] relative transition-all duration-100 ease-out">
+        <div className="h-[6rem] relative transition-all duration-100 ease-out">
           <Link to="/">
             <img
               className="object-contain w-full h-full transition-all duration-100 ease-out hover:scale-90 active:scale-105"
@@ -58,14 +60,24 @@ const Nav = () => {
           </Link>
         </div>
       </div>
-      <div className="relative hidden navbar-end sm:flex">
+
+      <div
+        onClick={() => document.getElementById("my_modal_2").showModal()}
+        className="relative mx-3 mt-3 transition-all duration-100 ease-in sm:mt-0 active:scale-90"
+      >
+        <FaBookmark className="text-lg text-yellow-400 transition-all duration-100 ease-in cursor-pointer md:text-2xl active:scale-90" />
+        <p className="absolute flex items-center justify-center w-6 h-6 text-sm text-white bg-red-500 border rounded-full -top-3 -left-2">
+          {savedPokemons?.length}
+        </p>
+      </div>
+      <div className="hidden w-fit navbar-end sm:flex">
         <input
           type="text"
           placeholder="search your fav Pokemon..."
           className="p-3 px-4 border-2 border-yellow-600 rounded-full focus:outline-none w-80"
         />
 
-        <FaSearch className="absolute text-yellow-400 right-5" />
+        <FaSearch className="absolute text-yellow-400 right-8" />
       </div>
     </div>
   );

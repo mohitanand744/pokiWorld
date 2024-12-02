@@ -1,9 +1,14 @@
 import React from "react";
 import { FaBookmark, FaRegBookmark } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
+import useContextData from "../Hooks/useContextData";
 
-const PokemonCard = ({ pokemon, toggleSavedPokemon, isSaved }) => {
+const PokemonCard = ({ pokemon }) => {
   const navigate = useNavigate();
+
+  const { removeSavedPokemon, isSaved, toggleSavedPokemon } = useContextData();
+
+  console.log(isSaved);
 
   return (
     <div
@@ -39,12 +44,11 @@ const PokemonCard = ({ pokemon, toggleSavedPokemon, isSaved }) => {
           </h2>
 
           <div className="">
-            {isSaved ? (
+            {isSaved[pokemon.id] || false ? (
               <FaBookmark
                 onClick={(e) => {
                   e.stopPropagation();
-
-                  toggleSavedPokemon(pokemon.id);
+                  removeSavedPokemon(pokemon.id);
                 }}
                 className="text-lg text-yellow-400 transition-all duration-100 ease-in cursor-pointer md:text-2xl active:scale-90"
               />
@@ -52,8 +56,7 @@ const PokemonCard = ({ pokemon, toggleSavedPokemon, isSaved }) => {
               <FaRegBookmark
                 onClick={(e) => {
                   e.stopPropagation();
-
-                  toggleSavedPokemon(pokemon.id);
+                  toggleSavedPokemon(pokemon.id, pokemon.name, pokemon.image);
                 }}
                 className="text-lg text-yellow-400 transition-all duration-100 ease-in cursor-pointer md:text-2xl active:scale-90"
               />
