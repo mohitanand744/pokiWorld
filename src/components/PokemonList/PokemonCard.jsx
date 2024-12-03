@@ -8,12 +8,10 @@ const PokemonCard = ({ pokemon }) => {
 
   const { removeSavedPokemon, isSaved, toggleSavedPokemon } = useContextData();
 
-  console.log(isSaved);
-
   return (
     <div
       onClick={() => {
-        navigate("/25");
+        navigate(`/${pokemon.id}`);
       }}
       key={pokemon?.id}
       className="w-56 h-56 mx-5 my-3 overflow-hidden transition-all duration-150 ease-in shadow-sm hover:scale-105 md:w-72 md:h-72 shadow-yellow-400 card bg-base-100 image-full"
@@ -44,7 +42,7 @@ const PokemonCard = ({ pokemon }) => {
           </h2>
 
           <div className="">
-            {isSaved[pokemon.id] || false ? (
+            {isSaved?.[pokemon.id] || false ? (
               <FaBookmark
                 onClick={(e) => {
                   e.stopPropagation();

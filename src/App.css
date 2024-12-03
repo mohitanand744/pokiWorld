@@ -3,11 +3,11 @@
 @tailwind utilities;
 
 html {
-  background: #02001f !important;
+  @apply bg-[#02001f];
 }
 
 #root {
-  min-height: 100vh;
+  @apply min-h-screen;
 }
 
 .owl-nav {
@@ -64,5 +64,40 @@ html {
     span {
       background-color: yellow !important;
     }
+  }
+}
+
+.Toastify__toast {
+  background: #000000b8 !important;
+  border: 2px solid yellow;
+  color: #fff !important;
+  font-weight: bold;
+  box-shadow: rgb(230 253 0 / 98%) 0px 50px 100px -20px,
+    rgb(255 8 8 / 42%) 0px 30px 60px -30px,
+    rgb(255 209 7 / 76%) 0px -2px 6px 0px inset !important;
+  border-radius: 2rem !important;
+  -webkit-border-radius: 2rem !important;
+  -moz-border-radius: 2rem !important;
+  -ms-border-radius: 2rem !important;
+  -o-border-radius: 2rem !important;
+  position: relative;
+  padding-left: 2rem !important;
+
+  &::after {
+    content: "✅";
+    position: absolute;
+    left: 1rem;
+    top: 30%;
+  }
+}
+.cus-shad {
+  box-shadow: rgba(230, 255, 2, 0.521) 0px 0px 100px -20px inset,
+    rgba(159, 161, 0, 0.5) 0px 30px 60px -30px inset,
+    rgba(235, 231, 0, 0.911) 0px -2px 6px 0px inset !important;
+}
+
+@media (max-width: 568px) {
+  .Toastify__toast {
+    @apply rounded-none;
   }
 }

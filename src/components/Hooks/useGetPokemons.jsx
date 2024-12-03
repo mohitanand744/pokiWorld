@@ -24,6 +24,10 @@ const useGetPokemons = () => {
             id: pokemonObj.id,
             name: pokemonObj.name,
             image: pokemonObj.sprites.other.dream_world.front_default,
+            abilities: pokemonObj.abilities,
+            weight: pokemonObj.weight,
+            height: pokemonObj.height,
+            types: pokemonObj.types,
           };
         });
         setAllPokemon(finalPokemonData);

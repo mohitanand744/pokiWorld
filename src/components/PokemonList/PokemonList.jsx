@@ -1,26 +1,14 @@
 import Marquee from "react-fast-marquee";
 import Skeleton from "../Loading/Skeleton";
-import Banner from "../Banners/Banner";
 import PokemonCard from "./PokemonCard";
-import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import SavedPokemons from "../Models/SavedPokemons";
 import useContextData from "../Hooks/useContextData";
 
 const PokemonList = () => {
-  const {
-    isSaved,
-    loading,
-    allPokemon,
-    err,
-    savedPokemons,
-    toggleSavedPokemon,
-  } = useContextData();
+  const { loading, allPokemon, err } = useContextData();
 
   return (
-    <div className="flex flex-col gap-10 ">
-      <Banner />
-
+    <div className="">
       {loading ? (
         <Skeleton />
       ) : err ? (
@@ -55,12 +43,6 @@ const PokemonList = () => {
           </Marquee>
         </>
       )}
-
-      <ToastContainer className={"text-green-500"} />
-
-      {/* Saved Pokemons */}
-
-      <SavedPokemons savedPokemons={savedPokemons} />
     </div>
   );
 };

@@ -23,7 +23,7 @@ const Banner = () => {
   };
 
   return (
-    <div className="relative w-full mx-auto mb-10 shadow-2xl shadow-yellow-300">
+    <div className="relative w-full mx-auto mb-10 shadow-xl shadow-yellow-300">
       <OwlCarousel className="owl-theme" {...options}>
         <div className="w-full item">
           <img
@@ -41,6 +41,14 @@ const Banner = () => {
             loading="eager"
           />
         </div>{" "}
+        <div className="w-full item">
+          <img
+            className="object-cover   w-[100%]  h-[25rem]  "
+            src="/images/pokiImg1.svg"
+            alt="Banner 2"
+            loading="eager"
+          />
+        </div>
         <div className="w-full item">
           <img
             className="object-cover   w-[100%]  h-[25rem]  "
