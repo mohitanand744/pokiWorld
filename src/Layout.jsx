@@ -13,6 +13,8 @@ const Layout = () => {
       <Nav />
       <Outlet />
 
+      {/* Toast */}
+
       <ToastContainer />
 
       {/* Saved Pokemons */}
