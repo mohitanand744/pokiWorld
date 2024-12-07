@@ -12,7 +12,7 @@ const RoutesCom = () => {
   useEffect(() => {
     setTimeout(() => {
       setLoading(false);
-    }, 1000);
+    }, 9000);
   }, []);
 
   return (
