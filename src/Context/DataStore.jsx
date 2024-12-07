@@ -1,10 +1,11 @@
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 
 export const ContextDataProvider = createContext();
 import { toast } from "react-toastify";
 
 import React from "react";
 import useGetPokemons from "../components/Hooks/useGetPokemons";
+import { useLocation } from "react-router-dom";
 
 const DataStore = ({ children }) => {
   const [isSaved, setIsSaved] = useState(() => {
@@ -12,11 +13,13 @@ const DataStore = ({ children }) => {
     return data;
   });
   const [urls, setURLs] = useState(null);
-  const { loading, allPokemon, err, url } = useGetPokemons(urls && urls);
+  const { loading, allPokemon, err, url } = useGetPokemons(
+    urls || "https://pokeapi.co/api/v2/pokemon?offset=20&limit=20"
+  );
   const [savedPokemons, setSavedPokemons] = useState(() => {
     try {
       const data = JSON.parse(localStorage.getItem("pokemons"));
-      return Array.isArray(data) ? data : [];
+      return data ? data : [];
     } catch (error) {
       console.error(
         "Error initializing savedPokemons from localStorage:",
@@ -25,6 +28,14 @@ const DataStore = ({ children }) => {
       return [];
     }
   });
+  const location = useLocation();
+
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  }, [location.pathname]);
 
   const toggleSavedPokemon = (id, name, image) => {
     setIsSaved((prev) => {

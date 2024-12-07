@@ -7,10 +7,10 @@ import DataStore from "./Context/DataStore";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <DataStore>
-      <BrowserRouter>
+    <BrowserRouter>
+      <DataStore>
         <RoutesCom />
-      </BrowserRouter>
-    </DataStore>
+      </DataStore>
+    </BrowserRouter>
   </StrictMode>
 );

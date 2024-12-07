@@ -6,8 +6,8 @@ import useContextData from "../../Hooks/useContextData";
 const Nav = () => {
   const { savedPokemons } = useContextData();
   return (
-    <div className="w-full px-4 py-2 shadow-inner navbar bg-slate-900 shadow-yellow-400">
-      <div className="justify-between w-full sm:justify-start navbar-start">
+    <div className="sticky top-0 z-50 w-full px-4 py-2 shadow-inner navbar bg-slate-900 shadow-yellow-400">
+      <div className="justify-between w-full sm:justify-start navbar-start ">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
             <svg
@@ -35,7 +35,7 @@ const Nav = () => {
                 <FaBookmark className="text-lg text-yellow-400 transition-all duration-100 ease-in cursor-pointer md:text-2xl active:scale-90" />{" "}
               </a>
             </li>
-            <li className="w-full">
+            {/*   <li className="w-full">
               <div className="flex items-center justify-between w-full">
                 <input
                   type="text"
@@ -47,7 +47,7 @@ const Nav = () => {
                   <FaSearch className="text-yellow-400 " />
                 </div>
               </div>
-            </li>
+            </li> */}
           </ul>
         </div>
         <div className="h-[6rem] relative transition-all duration-100 ease-out">
@@ -70,7 +70,7 @@ const Nav = () => {
           {savedPokemons?.length}
         </p>
       </div>
-      <div className="hidden w-fit navbar-end sm:flex">
+      {/*  <div className="hidden w-fit navbar-end sm:flex">
         <input
           type="text"
           placeholder="search your fav Pokemon..."
@@ -78,7 +78,7 @@ const Nav = () => {
         />
 
         <FaSearch className="absolute text-yellow-400 right-8" />
-      </div>
+      </div> */}
     </div>
   );
 };

@@ -3,6 +3,7 @@ import Skeleton from "../Loading/Skeleton";
 import PokemonCard from "./PokemonCard";
 import "react-toastify/dist/ReactToastify.css";
 import useContextData from "../Hooks/useContextData";
+import APIError from "../Errors/APIError";
 
 const PokemonList = () => {
   const { loading, allPokemon, err } = useContextData();
@@ -12,9 +13,7 @@ const PokemonList = () => {
       {loading ? (
         <Skeleton />
       ) : err ? (
-        <div className="tooltip tooltip-open tooltip-error" data-tip="error">
-          <button className="btn btn-error">Please Refresh Your Page</button>
-        </div>
+        <APIError />
       ) : (
         <>
           <Marquee gradient={false} direction="right" speed={150} pauseOnHover>

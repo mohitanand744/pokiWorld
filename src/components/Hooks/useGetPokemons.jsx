@@ -7,13 +7,26 @@ const useGetPokemons = (PaginationUrl) => {
   const [allPokemon, setAllPokemon] = useState([]);
   const [err, setErr] = useState(null);
   const [url, setURL] = useState({});
+  const [cachedData, setCachedData] = useState({});
+  console.log(cachedData);
 
   useEffect(() => {
+    if (cachedData[PaginationUrl]) {
+      setAllPokemon(cachedData[PaginationUrl].finalPokemonData);
+      setURL({
+        next: cachedData[PaginationUrl].data.next,
+        previous: cachedData[PaginationUrl].data.previous,
+      });
+      setLoading(false);
+      return;
+    }
+
     (async () => {
       try {
         const { data, error } = await getAllPokemon(
           PaginationUrl && PaginationUrl
         );
+
         setErr(error);
 
         let pokemonData = data.results.map((pokemon) => axios.get(pokemon.url));
@@ -34,6 +47,10 @@ const useGetPokemons = (PaginationUrl) => {
           };
         });
         setAllPokemon(finalPokemonData);
+        setCachedData((prev) => ({
+          ...prev,
+          [PaginationUrl]: { finalPokemonData: finalPokemonData, data: data },
+        }));
 
         setURL({
           next: data.next,
@@ -41,6 +58,8 @@ const useGetPokemons = (PaginationUrl) => {
         });
         setLoading(false);
       } catch (error) {
+        setLoading(false);
+
         setErr(error.message);
       }
     })();

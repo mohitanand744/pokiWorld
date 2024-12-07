@@ -2,12 +2,10 @@ import React, { useState } from "react";
 import useContextData from "../Hooks/useContextData";
 
 const Pagination = () => {
-  const { allPokemon, url, setURLs } = useContextData();
-
-  console.log(url?.previous);
+  const { url, setURLs } = useContextData();
 
   return (
-    <div className="flex justify-between w-full p-2 mx-auto rounded-full join ">
+    <div className="flex justify-between w-full p-2 mx-auto mt-3 mb-8 rounded-full join">
       <button
         className={`pb-1 text-xl  join-item btn  ${
           url?.previous && "shadow-inner shadow-yellow-400"
@@ -24,7 +22,7 @@ const Pagination = () => {
 
       <button
         className={`pb-1 text-xl  join-item btn  ${
-          url?.previous && "shadow-inner shadow-yellow-400"
+          url?.next && "shadow-inner shadow-yellow-400"
         }`}
         disabled={url?.next ? false : true}
         onClick={() => {
