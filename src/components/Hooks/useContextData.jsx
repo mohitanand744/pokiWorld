@@ -11,6 +11,8 @@ const useContextData = () => {
     toggleSavedPokemon,
     setSavedPokemons,
     removeSavedPokemon,
+    url,
+    setURLs,
   } = useContext(ContextDataProvider);
 
   return {
@@ -22,6 +24,8 @@ const useContextData = () => {
     toggleSavedPokemon,
     setSavedPokemons,
     removeSavedPokemon,
+    url,
+    setURLs,
   };
 };
 

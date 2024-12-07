@@ -6,6 +6,7 @@ import { ToastContainer } from "react-toastify";
 import SavedPokemons from "./components/Models/SavedPokemons";
 import useContextData from "./components/Hooks/useContextData";
 import AllPokemons from "./components/PokemonList/AllPokemons";
+import Pagination from "./components/Pagination/Pagination";
 
 const App = () => {
   const { savedPokemons } = useContextData();
@@ -17,6 +18,8 @@ const App = () => {
       <Banner2 />
 
       <AllPokemons />
+
+      <Pagination />
 
       <ToastContainer />
 

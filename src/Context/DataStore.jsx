@@ -11,7 +11,8 @@ const DataStore = ({ children }) => {
     const data = JSON.parse(localStorage.getItem("isSaved")) || {};
     return data;
   });
-  const { loading, allPokemon, err } = useGetPokemons();
+  const [urls, setURLs] = useState(null);
+  const { loading, allPokemon, err, url } = useGetPokemons(urls && urls);
   const [savedPokemons, setSavedPokemons] = useState(() => {
     try {
       const data = JSON.parse(localStorage.getItem("pokemons"));
@@ -79,6 +80,8 @@ const DataStore = ({ children }) => {
         setSavedPokemons,
         toggleSavedPokemon,
         removeSavedPokemon,
+        url,
+        setURLs,
       }}
     >
       {children}
