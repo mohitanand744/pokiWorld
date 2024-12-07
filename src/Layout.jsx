@@ -4,6 +4,7 @@ import { Outlet } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import SavedPokemons from "./components/Models/SavedPokemons";
 import useContextData from "./components/Hooks/useContextData";
+import Footer from "./components/Footer/Footer";
 
 const Layout = () => {
   const { savedPokemons } = useContextData();
@@ -12,6 +13,7 @@ const Layout = () => {
     <>
       <Nav />
       <Outlet />
+      <Footer />
 
       {/* Toast */}
 
