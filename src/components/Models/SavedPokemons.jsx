@@ -9,7 +9,7 @@ const SavedPokemons = () => {
 
   return (
     <dialog id="my_modal_2" className="modal">
-      <div className="modal-box bg-[#000b] shadow-sm shadow-yellow-400 h-[60vh]">
+      <div className="modal-box bg-[#000b]  shadow-sm shadow-yellow-400 h-[60vh]">
         <h3 className="text-xl font-bold text-center text-yellow-200 md:text-2xl">
           Saved Pokemons
         </h3>

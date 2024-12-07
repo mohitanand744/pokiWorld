@@ -4,7 +4,7 @@ import { Link, useParams } from "react-router-dom";
 const DetailsPage = () => {
   const { id } = useParams();
   return (
-    <div role="alert" className="alert w-[97%] mx-auto mt-10">
+    <div role="alert" className="alert w-[97%] h-[47vh] mx-auto mt-10">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         fill="none"
