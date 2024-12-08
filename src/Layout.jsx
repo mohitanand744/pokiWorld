@@ -17,7 +17,7 @@ const Layout = () => {
 
       {/* Toast */}
 
-      <ToastContainer />
+      <ToastContainer position="top-center" />
 
       {/* Saved Pokemons */}
 
