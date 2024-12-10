@@ -10,7 +10,7 @@ const Layout = () => {
   const { savedPokemons } = useContextData();
 
   return (
-    <>
+    <div className="bg-[#000000d5]">
       <Nav />
       <Outlet />
       <Footer />
@@ -22,7 +22,7 @@ const Layout = () => {
       {/* Saved Pokemons */}
 
       <SavedPokemons savedPokemons={savedPokemons} />
-    </>
+    </div>
   );
 };
 

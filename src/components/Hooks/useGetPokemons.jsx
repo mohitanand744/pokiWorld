@@ -8,7 +8,6 @@ const useGetPokemons = (PaginationUrl) => {
   const [err, setErr] = useState(null);
   const [url, setURL] = useState({});
   const [cachedData, setCachedData] = useState({});
-  console.log(cachedData);
 
   useEffect(() => {
     if (cachedData[PaginationUrl]) {
