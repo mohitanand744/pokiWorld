@@ -71,27 +71,35 @@ const DetailsPage = () => {
               </center>
               <ul className="flex flex-wrap justify-around gap-4 mt-6 ">
                 <div className="">
-                  <li className="pb-1 font-bold text-center border-b px-7 md:px-10 rounded-3xl">
+                  <li className="w-32 pb-1 mx-auto font-bold text-center text-white border-b border-white rounded-3xl px-7 md:px-10">
                     Height
                   </li>
-                  <p className="mt-5 text-center text-yellow-400">
+                  <p className="px-4 mt-5 text-center text-yellow-400 ">
                     {pokemonDetails?.height} fit
                   </p>
                 </div>
                 <div className="">
-                  <li className="pb-1 font-bold text-center border-b px-7 md:px-10 rounded-3xl">
+                  <li className="w-32 pb-1 mx-auto font-bold text-center text-white border-b border-white rounded-3xl px-7 md:px-10">
                     Weight{" "}
                   </li>
-                  <p className="mt-5 text-center text-yellow-400">
+                  <p className="px-4 mt-5 text-center text-yellow-400 ">
                     {pokemonDetails?.weight} Kg
                   </p>
                 </div>
                 <div className="">
-                  <li className="pb-1 font-bold text-center border-b px-7 md:px-10 rounded-3xl">
+                  <li className="w-32 pb-1 mx-auto font-bold text-center text-white border-b border-white rounded-3xl px-7 md:px-10">
                     Ability
                   </li>
-                  <p className="mt-5 text-center text-yellow-400">
+                  <p className="px-4 mt-5 text-center text-yellow-400 ">
                     {abilities.slice(0, 2).join(", ")}
+                  </p>
+                </div>
+                <div className="">
+                  <li className="w-32 pb-1 mx-auto font-bold text-center text-white border-b border-white rounded-3xl px-7 md:px-10">
+                    Power
+                  </li>
+                  <p className="px-4 mt-5 text-center text-yellow-400 ">
+                    {pokemonDetails?.base_experience}
                   </p>
                 </div>
               </ul>
