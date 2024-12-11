@@ -69,33 +69,33 @@ const DetailsPage = () => {
                   {types?.slice(0, 2).join(", ")}
                 </span>
               </center>
-              <ul className="flex flex-wrap justify-around gap-4 mt-6 ">
-                <div className="">
-                  <li className="w-32 pb-1 mx-auto font-bold text-center text-white border-b border-white rounded-3xl px-7 md:px-10">
+              <ul className="grid grid-cols-12 gap-4 mt-6 ">
+                <div className="col-span-6 xl:col-span-3">
+                  <li className="pb-1 mx-auto font-bold text-center text-white border-b border-white rounded-3xl px-7 md:px-10">
                     Height
                   </li>
                   <p className="px-4 mt-5 text-center text-yellow-400 ">
                     {pokemonDetails?.height} fit
                   </p>
                 </div>
-                <div className="">
-                  <li className="w-32 pb-1 mx-auto font-bold text-center text-white border-b border-white rounded-3xl px-7 md:px-10">
+                <div className="col-span-6 xl:col-span-3">
+                  <li className="pb-1 mx-auto font-bold text-center text-white border-b border-white rounded-3xl px-7 md:px-10">
                     Weight{" "}
                   </li>
                   <p className="px-4 mt-5 text-center text-yellow-400 ">
                     {pokemonDetails?.weight} Kg
                   </p>
                 </div>
-                <div className="">
-                  <li className="w-32 pb-1 mx-auto font-bold text-center text-white border-b border-white rounded-3xl px-7 md:px-10">
+                <div className="col-span-6 xl:col-span-3">
+                  <li className="pb-1 mx-auto font-bold text-center text-white border-b border-white rounded-3xl px-7 md:px-10">
                     Ability
                   </li>
                   <p className="px-4 mt-5 text-center text-yellow-400 ">
                     {abilities.slice(0, 2).join(", ")}
                   </p>
                 </div>
-                <div className="">
-                  <li className="w-32 pb-1 mx-auto font-bold text-center text-white border-b border-white rounded-3xl px-7 md:px-10">
+                <div className="col-span-6 xl:col-span-3">
+                  <li className="pb-1 mx-auto font-bold text-center text-white border-b border-white rounded-3xl px-7 md:px-10">
                     Power
                   </li>
                   <p className="px-4 mt-5 text-center text-yellow-400 ">
