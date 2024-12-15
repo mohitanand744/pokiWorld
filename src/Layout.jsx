@@ -5,6 +5,7 @@ import { ToastContainer } from "react-toastify";
 import SavedPokemons from "./components/Models/SavedPokemons";
 import useContextData from "./components/Hooks/useContextData";
 import Footer from "./components/Footer/Footer";
+import SearchContainer from "./components/SearchContainer/SearchContainer";
 
 const Layout = () => {
   const { savedPokemons } = useContextData();
@@ -12,6 +13,7 @@ const Layout = () => {
   return (
     <div className="bg-[#000000d5]">
       <Nav />
+      <SearchContainer />
       <Outlet />
       <Footer />
 

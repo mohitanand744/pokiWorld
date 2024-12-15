@@ -12,13 +12,13 @@ const PokemonDetailsCard = ({ pokemon }) => {
 
   const { removeSavedPokemon, isSaved, toggleSavedPokemon } = useContextData();
 
-  const ablities = pokemon.abilities?.map(
+  const ablities = pokemon?.abilities?.map(
     (ablitiesInfo) => ablitiesInfo.ability.name
   );
 
-  const finalAbility = ablities.slice(0, 2).join(", ");
+  const finalAbility = ablities?.slice(0, 2).join(", ");
   const types = pokemon.types?.map((typess) => typess.type.name);
-  const finalType = types.join(", ");
+  const finalType = types?.join(", ");
   return (
     <div
       onClick={() => {
@@ -27,8 +27,10 @@ const PokemonDetailsCard = ({ pokemon }) => {
       key={pokemon?.id}
       className="cursor-pointer mx-5 my-3 relative overflow-hidden transition-all duration-150 ease-in shadow-sm hover:scale-105w-[19.4rem] h-[30rem] shadow-yellow-400 card bg-base-100 image-full"
     >
-      {!pokemon ? (
-        <Skeleton />
+      {pokemon.id === undefined ? (
+        <div className="z-50">
+          <Skeleton />
+        </div>
       ) : (
         <>
           {/* Background Image */}

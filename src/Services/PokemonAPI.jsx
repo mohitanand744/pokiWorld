@@ -23,3 +23,12 @@ export const getPokemonDetails = async (id) => {
     return { data: null, error: error.message };
   }
 };
+
+export const searchPokemos = async (name) => {
+  try {
+    const response = axios.get(`${BASE_URL}/${name}`);
+    return { data: (await response).data, error: null };
+  } catch (error) {
+    return { data: null, error: error.message };
+  }
+};

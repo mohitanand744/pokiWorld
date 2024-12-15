@@ -13,6 +13,8 @@ const useContextData = () => {
     removeSavedPokemon,
     url,
     setURLs,
+    searchInput,
+    setSearchInput,
   } = useContext(ContextDataProvider);
 
   return {
@@ -26,6 +28,8 @@ const useContextData = () => {
     removeSavedPokemon,
     url,
     setURLs,
+    searchInput,
+    setSearchInput,
   };
 };
 

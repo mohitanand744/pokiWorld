@@ -12,8 +12,6 @@ const DetailsPage = () => {
   const [pokiId, setPokiId] = useState(idNum);
   const navigate = useNavigate();
 
-  console.log(pokiId);
-
   console.log(pokemonDetails);
   const image = pokemonDetails?.sprites?.other.dream_world.front_default;
 
@@ -62,6 +60,11 @@ const DetailsPage = () => {
             <div className="w-[30rem] mb-5 lg:w-[50%] xl:w-[60%] mx-auto">
               <center>
                 <img className="w-44 md:w-60" src={image && image} alt="" />
+              </center>
+              <center>
+                <h1 className="text-2xl tracking-[10px] uppercase font-semibold text-yellow-400 mt-4 md:text-3xl">
+                  {pokemonDetails?.name}
+                </h1>
               </center>
               <center className="px-4 py-1 mx-auto mt-8 font-bold text-white bg-orange-600 w-fit rounded-3xl">
                 Type:{" "}

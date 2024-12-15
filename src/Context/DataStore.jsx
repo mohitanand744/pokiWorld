@@ -1,11 +1,10 @@
 import { createContext, useEffect, useState } from "react";
-
-export const ContextDataProvider = createContext();
 import { toast } from "react-toastify";
-
 import React from "react";
 import useGetPokemons from "../components/Hooks/useGetPokemons";
 import { useLocation } from "react-router-dom";
+
+export const ContextDataProvider = createContext();
 
 const DataStore = ({ children }) => {
   const [isSaved, setIsSaved] = useState(() => {
@@ -29,12 +28,14 @@ const DataStore = ({ children }) => {
     }
   });
   const location = useLocation();
+  const [searchInput, setSearchInput] = useState("");
 
   useEffect(() => {
     window.scrollTo({
       top: 0,
       behavior: "smooth",
     });
+    setSearchInput("");
   }, [location.pathname]);
 
   const toggleSavedPokemon = (id, name, image) => {
@@ -93,6 +94,8 @@ const DataStore = ({ children }) => {
         removeSavedPokemon,
         url,
         setURLs,
+        searchInput,
+        setSearchInput,
       }}
     >
       {children}

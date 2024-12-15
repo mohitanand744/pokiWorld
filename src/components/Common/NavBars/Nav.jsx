@@ -2,9 +2,14 @@ import React from "react";
 import { FaBookmark, FaSearch } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import useContextData from "../../Hooks/useContextData";
+import useDebouncingSearch from "../../Hooks/useDebouncingSearch";
 
 const Nav = () => {
-  const { savedPokemons } = useContextData();
+  const { savedPokemons, searchInput, setSearchInput } = useContextData();
+  const searchPoki = useDebouncingSearch((e) => {
+    setSearchInput(e.target.value);
+  });
+
   return (
     <div className="sticky top-0 z-50 w-full px-4 py-2 shadow-inner navbar bg-slate-900 shadow-yellow-400">
       <div className="justify-between w-full sm:justify-start navbar-start ">
@@ -29,13 +34,16 @@ const Nav = () => {
             tabIndex={0}
             className="menu text-center  dropdown-content  rounded-box backdrop-blur-sm bg-black/50 z-[9999] mt-3 w-[19rem] p-2 shadow border-2 border-yellow-400"
           >
-            <li className="">
+            <li
+              className=""
+              onClick={() => document.getElementById("my_modal_2").showModal()}
+            >
               <a className="justify-between w-full text-center">
                 View Saved Pokemon
                 <FaBookmark className="text-lg text-yellow-400 transition-all duration-100 ease-in cursor-pointer md:text-2xl active:scale-90" />{" "}
               </a>
             </li>
-            {/*   <li className="w-full">
+            <li className="w-full">
               <div className="flex items-center justify-between w-full">
                 <input
                   type="text"
@@ -47,7 +55,7 @@ const Nav = () => {
                   <FaSearch className="text-yellow-400 " />
                 </div>
               </div>
-            </li> */}
+            </li>
           </ul>
         </div>
         <div className="h-[6rem] relative transition-all duration-100 ease-out">
@@ -70,15 +78,16 @@ const Nav = () => {
           {savedPokemons?.length}
         </p>
       </div>
-      {/*  <div className="hidden w-fit navbar-end sm:flex">
+      <div className="hidden w-fit navbar-end sm:flex">
         <input
           type="text"
+          onChange={searchPoki}
           placeholder="search your fav Pokemon..."
           className="p-3 px-4 border-2 border-yellow-600 rounded-full focus:outline-none w-80"
         />
 
         <FaSearch className="absolute text-yellow-400 right-8" />
-      </div> */}
+      </div>
     </div>
   );
 };
