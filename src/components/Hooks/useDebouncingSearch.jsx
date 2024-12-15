@@ -1,5 +1,3 @@
-import React from "react";
-
 const useDebouncingSearch = (cb, time = 1000) => {
   let timerId;
   return (...argument) => {
