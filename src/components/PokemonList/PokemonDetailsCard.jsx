@@ -28,8 +28,11 @@ const PokemonDetailsCard = ({ pokemon }) => {
       className="cursor-pointer mx-5 my-3 relative overflow-hidden transition-all duration-150 ease-in shadow-sm hover:scale-105w-[19.4rem] h-[30rem] shadow-yellow-400 card bg-base-100 image-full"
     >
       {pokemon.id === undefined ? (
-        <div className="z-50">
+        <div className="z-50 flex flex-col justify-center">
           <Skeleton />
+          <p className="mb-5 text-center text-red-500">
+            Please Provide Full Name of Pokemon!!
+          </p>
         </div>
       ) : (
         <>
